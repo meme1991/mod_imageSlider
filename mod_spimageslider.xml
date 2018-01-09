@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+  <name>MOD_SPIMAGESLIDER</name>
+	<author>SPEDI srl</author>
+	<creationDate>Marzo 2017</creationDate>
+	<copyright>Copyright (C) SPEDI srl</copyright>
+	<license>GNU/GPL license: http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>sviluppo@spedi.it</authorEmail>
+	<authorUrl>http://www.spedi.it</authorUrl>
+	<version>2.0.0</version>
+	<description>MOD_SPIMAGESLIDER_DESC</description>
+	<files>
+		<filename module="mod_spimageslider">mod_spimageslider.php</filename>
+		<filename>mod_spimageslider.xml</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<folder>css</folder>
+    <folder>images</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_djimageslider/models/fields">
+			<fieldset name="basic">
+				<field name="slider_source" type="list" default="1" label="MOD_SPIMAGESLIDER_SLIDER_SOURCE" description="MOD_SPIMAGESLIDER_SLIDER_SOURCE_DESC">
+					<!-- <option value="0">MOD_SPIMAGESLIDER_FOLDER</option> -->
+					<option value="1">MOD_SPIMAGESLIDER_COMPONENT</option>
+				</field>
+				<!-- <field type="spacer" label="&lt;hr &#47;&gt;" />
+				<field type="spacer" label="MOD_SPIMAGESLIDER_FOLDER_AS_SOURCE_SETTINGS" />
+				<field name="image_folder" type="text" default="images" size="50" label="MOD_SPIMAGESLIDER_IMAGE_FOLDER" description="MOD_SPIMAGESLIDER_IMAGE_FOLDER_DESC" />
+				<field type="spacer" label="&lt;hr &#47;&gt;" /> -->
+				<field type="spacer" label="MOD_SPIMAGESLIDER_COMPONENT_AS_SOURCE_SETTINGS" />
+				<field name="category" type="category" extension="com_djimageslider" label="MOD_SPIMAGESLIDER_SLIDES_CATEGORY" description="MOD_SPIMAGESLIDER_SLIDES_CATEGORY_DESC" />
+				<!-- <field name="show_title" type="radio" class="btn-group" default="1" label="MOD_SPIMAGESLIDER_SHOW_TITLE" description="MOD_SPIMAGESLIDER_SHOW_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_desc" type="radio" class="btn-group" default="1" label="MOD_SPIMAGESLIDER_SHOW_DESCRIPTION" description="MOD_SPIMAGESLIDER_SHOW_DESCRIPTION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="link_title" type="radio" class="btn-group" default="1" label="MOD_SPIMAGESLIDER_LINK_TITLE" description="MOD_SPIMAGESLIDER_LINK_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field> -->
+				<!-- <field name="limit_desc" type="text" default="" size="10" label="MOD_SPIMAGESLIDER_DESCRIPTION_LIMIT" description="MOD_SPIMAGESLIDER_DESCRIPTION_LIMIT_DESC" /> -->
+				<field type="spacer" label="&lt;hr &#47;&gt;" />
+				<field type="spacer" label="MOD_SPIMAGESLIDER_BASIC_SLIDER_SETTINGS" description="MOD_SPIMAGESLIDER_SLIDER_DIMENSIONS" />
+				<field type="spacer" label="" />
+				<!--<field name="full_width" type="radio" class="btn-group" default="0" label="MOD_SPIMAGESLIDER_FULL_WIDTH" description="MOD_SPIMAGESLIDER_FULL_WIDTH_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>-->
+				<!--<field name="image_width" type="text" default="240" size="10" label="MOD_SPIMAGESLIDER_SLIDE_WIDTH" description="MOD_SPIMAGESLIDER_SLIDE_WIDTH_DESC" />-->
+				<field name="image_height" type="text" default="350" size="10" label="MOD_SPIMAGESLIDER_SLIDE_HEIGHT" description="MOD_SPIMAGESLIDER_SLIDE_HEIGHT_DESC" />
+				<!--<field name="visible_images" type="text" default="3" size="10" label="MOD_SPIMAGESLIDER_VISIBLE_IMAGES" description="MOD_SPIMAGESLIDER_VISIBLE_IMAGES_DESC" />
+				<field name="space_between_images" type="text" default="10" size="10" label="MOD_SPIMAGESLIDER_SPACE_BETWEEN_IMAGES" description="MOD_SPIMAGESLIDER_SPACE_BETWEEN_IMAGES_DESC" />-->
+				<!-- <field name="sort_by" type="list" default="1" label="MOD_SPIMAGESLIDER_SORT_BY" description="MOD_SPIMAGESLIDER_SORT_BY_DESC">
+					<option value="1">MOD_SPIMAGESLIDER_FILE_NAME_ORDERING_ASC</option>
+					<option value="2">MOD_SPIMAGESLIDER_FILE_NAME_ORDERING_DESC</option>
+					<option value="3">MOD_SPIMAGESLIDER_DATE_ASC</option>
+					<option value="4">MOD_SPIMAGESLIDER_DATE_DESC</option>
+					<option value="0">MOD_SPIMAGESLIDER_RANDOMISE</option>
+				</field> -->
+				<!--<field name="show_buttons" type="radio" class="btn-group" default="1" label="MOD_SPIMAGESLIDER_SHOW_PLAY_PAUSE" description="MOD_SPIMAGESLIDER_SHOW_PLAY_PAUSE_DESC">
+					<option value="0">JNO</option>
+					<option value="2">JYES</option>
+					<option value="1">MOD_SPIMAGESLIDER_ON_MOUSE_OVER</option>
+				</field>-->
+				<field name="show_arrows" type="radio" class="btn-group" default="1" label="MOD_SPIMAGESLIDER_SHOW_NEXT_PREV" description="MOD_SPIMAGESLIDER_SHOW_NEXT_PREV_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_custom_nav" type="radio" class="btn-group" default="1" label="MOD_SPIMAGESLIDER_SHOW_CUSTOM_NAVIGATION" description="MOD_SPIMAGESLIDER_SHOW_CUSTOM_NAVIGATION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>
