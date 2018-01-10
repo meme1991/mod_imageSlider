@@ -17,7 +17,7 @@ $heroCarouselId = 'hero-fade-carousel-'.$module->id;
 
       <?php foreach ($slides as $k => $slide) : ?>
         <?php if($k == 0) : //the first slide ?>
-          <div class="col-6 hero-grid-left" style="height: <?php echo $image_height ?>px">
+          <div class="col-12 col-sm-12 col-md-6 hero-grid-left" style="height: <?php echo $image_height ?>px">
             <div class="cover" style="background-image: url(<?php echo $slide->image ?>)"></div>
             <div class="caption">
               <?php if($slide->title) : ?>
@@ -32,7 +32,7 @@ $heroCarouselId = 'hero-fade-carousel-'.$module->id;
             <?php endif; ?>
           </div>
 
-          <div class="col-6 hero-grid-right"> <!-- open #2 -->
+          <div class="col-12 col-sm-12 col-md-6 hero-grid-right"> <!-- open #2 -->
             <div class="row"> <!-- open #1 -->
         <?php endif; ?>
 
