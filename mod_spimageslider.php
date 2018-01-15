@@ -54,6 +54,9 @@ switch ($params->get('layout')) {
 	case '_:grid':
 		$document->addStyleSheet(JURI::base(true).'/modules/'.$module->module.'/css/'.substr($params->get('layout', 'default'), 2, strlen($params->get('layout', 'default'))).'/default.min.css?v=1.0.0');
 		break;
+	case '_:grid-vertical':
+		$document->addStyleSheet(JURI::base(true).'/modules/'.$module->module.'/css/'.substr($params->get('layout', 'default'), 2, strlen($params->get('layout', 'default'))).'/default.min.css?v=1.0.0');
+		break;
 	case '_:bootstrap-carousel':
 		$document->addStyleSheet(JURI::base(true).'/modules/'.$module->module.'/css/'.substr($params->get('layout', 'default'), 2, strlen($params->get('layout', 'default'))).'/default.min.css?v=1.0.0');
 		break;
