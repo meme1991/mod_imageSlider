@@ -10,12 +10,14 @@
 defined('_JEXEC') or die ('Restricted access');
 // $heroCarouselId = 'hero-fade-carousel-'.$module->id;
 ?>
-<?php if($slides >= 2) : ?>
-<section class="hero-grid-vertical">
+
+<!-- Swiper -->
+<div class="hero-grid-vertical">
   <div class="container">
-    <div class="row">
-      <?php foreach ($slides as $k => $slide) : ?>
-        <div class="col hero-cell" style="height: <?php echo $image_height ?>px">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <?php foreach ($slides as $k => $slide) : ?>
+        <div class="swiper-slide hero-cell" style="height: <?php echo $image_height ?>px">
           <div class="cover" style="background-image: url(<?php echo $slide->image ?>)"></div>
           <div class="caption">
             <?php if($slide->title) : ?>
@@ -30,7 +32,39 @@ defined('_JEXEC') or die ('Restricted access');
           <?php endif; ?>
         </div>
       <?php endforeach; ?>
-    </div><!-- end .row -->
+      </div>
+      <!-- Add Pagination -->
+      <!-- <div class="swiper-pagination"></div> -->
+    </div>
   </div>
-</section>
-<?php endif; ?>
+</div>
+
+<?php
+$document->addScriptDeclaration("
+	jQuery(document).ready(function($){
+
+    var swiper = new Swiper('.hero-grid-vertical .swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 0,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2
+        },
+        576: {
+          slidesPerView: 1
+        }
+      }
+
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
+    });
+
+	})
+");
+?>

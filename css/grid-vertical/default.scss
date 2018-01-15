@@ -10,11 +10,9 @@ $maxHeight: 400px;
 
 .hero-grid-vertical{
   .container{
+    cursor: move;
     padding-left: 15px;
     padding-right: 15px;
-    .row{
-      margin: 0;
-    }
   }
   .cover{
     position: relative;

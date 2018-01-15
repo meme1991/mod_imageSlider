@@ -56,15 +56,18 @@ switch ($params->get('layout')) {
 		break;
 	case '_:grid-vertical':
 		$document->addStyleSheet(JURI::base(true).'/modules/'.$module->module.'/css/'.substr($params->get('layout', 'default'), 2, strlen($params->get('layout', 'default'))).'/default.min.css?v=1.0.0');
+		$document->addStyleSheet(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.css');
+		JHtml::_('jquery.framework');
+		$document->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js');
 		break;
 	case '_:bootstrap-carousel':
 		$document->addStyleSheet(JURI::base(true).'/modules/'.$module->module.'/css/'.substr($params->get('layout', 'default'), 2, strlen($params->get('layout', 'default'))).'/default.min.css?v=1.0.0');
 		break;
 	case '_:swiper-fade-effect':
 		$document->addStyleSheet(JURI::base(true).'/modules/'.$module->module.'/css/'.substr($params->get('layout', 'default'), 2, strlen($params->get('layout', 'default'))).'/default.min.css?v=1.0.0');
-		$document->addStyleSheet(JUri::base(true).'/templates/'.$tmpl.'/css/swiper/swiper.min.css');
+		$document->addStyleSheet(JUri::base(true).'/disttemplates/'.$tmpl.'/dist/swiper/swiper.min.css');
 		JHtml::_('jquery.framework');
-		$document->addScript(JUri::base(true).'/templates/'.$tmpl.'/js/swiper/swiper.min.js');
+		$document->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js');
 		break;
 }
 
