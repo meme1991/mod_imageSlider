@@ -61,10 +61,10 @@ switch ($params->get('layout')) {
 		$extensionPath = '/templates/'.$tmpl.'/dist/swiper/';
     if(file_exists(JPATH_SITE.$extensionPath)){
     	$document->addStyleSheet(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.css');
-      $document->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js');
+      $document->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js', 'text/javascript', true, false);
     } else{
       $document->addStyleSheet(JUri::base(true).'/modules/'.$module->module.'/dist/swiper/swiper.min.css');
-    	$document->addScript(JUri::base(true).'/modules/'.$module->module.'/dist/swiper/swiper.min.js');
+    	$document->addScript(JUri::base(true).'/modules/'.$module->module.'/dist/swiper/swiper.min.js', 'text/javascript', true, false);
     }
 		break;
 	case '_:bootstrap-carousel':
@@ -75,10 +75,10 @@ switch ($params->get('layout')) {
 		$extensionPath = '/templates/'.$tmpl.'/dist/swiper/';
     if(file_exists(JPATH_SITE.$extensionPath)){
     	$document->addStyleSheet(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.css');
-      $document->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js');
+      $document->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js', 'text/javascript', true, false);
     } else{
       $document->addStyleSheet(JUri::base(true).'/modules/'.$module->module.'/dist/swiper/swiper.min.css');
-    	$document->addScript(JUri::base(true).'/modules/'.$module->module.'/dist/swiper/swiper.min.js');
+    	$document->addScript(JUri::base(true).'/modules/'.$module->module.'/dist/swiper/swiper.min.js', 'text/javascript', true, false);
     }
 		break;
 }
