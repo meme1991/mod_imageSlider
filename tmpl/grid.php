@@ -1,23 +1,32 @@
 <?php
-/**
- * @version    2.0.x
- * @package    SPEDI Image Splider
- * @author     SPEDI srl http://www.spedi.it
- * @copyright  Copyright (c) Spedi srl.
- * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
- */
+# @Author: SPEDI srl
+# @Date:   19-01-2018
+# @Email:  sviluppo@spedi.it
+# @Last modified by:   SPEDI srl
+# @Last modified time: 19-01-2018
+# @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+# @Copyright: Copyright (C) SPEDI srl
 
 defined('_JEXEC') or die ('Restricted access');
-$heroCarouselId = 'hero-fade-carousel-'.$module->id;
+$id = 'gid-'.$module->id;
+if(strpos($image_height, 'px') === false){
+  // è in %
+  echo JLayoutHelper::render('joomla.content.message.message_danger', JText::_("Specifica un'altezza in px per questo layout."));
+} else{
+  // è in px
+  $image_height = substr($image_height, 0, strpos($image_height, 'px'));
+  $big   = $image_height.'px';
+  $small = ($image_height/2).'px';
+}
 ?>
 <?php if($slides >= 5) : ?>
-<section class="hero-grid">
+<section class="hero-grid <?= $id ?>">
   <div class="container">
     <div class="row">
 
       <?php foreach ($slides as $k => $slide) : ?>
         <?php if($k == 0) : //the first slide ?>
-          <div class="col-12 col-sm-12 col-md-6 hero-grid-left" style="height: <?php echo $image_height ?>px">
+          <div class="col-12 col-sm-12 col-md-6 hero-grid-left" style="height: <?php echo $big ?>">
             <div class="cover" style="background-image: url(<?php echo $slide->image ?>)"></div>
             <div class="caption">
               <?php if($slide->title) : ?>
@@ -37,7 +46,7 @@ $heroCarouselId = 'hero-fade-carousel-'.$module->id;
         <?php endif; ?>
 
         <?php if($k > 0) : ?>
-          <div class="col-6 hero-grid-right-smallbox" style="height: <?php echo $image_height/2 ?>px">
+          <div class="col-6 hero-grid-right-smallbox" style="height: <?php echo $small ?>">
             <div class="cover" style="background-image: url(<?php echo $slide->image ?>)"></div>
             <div class="caption">
               <?php if($slide->title) : ?>

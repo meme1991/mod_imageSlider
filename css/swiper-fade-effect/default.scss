@@ -1,10 +1,10 @@
-/**
- * @version    2.0.x
- * @package    SPEDI Image Splider
- * @author     SPEDI srl http://www.spedi.it
- * @copyright  Copyright (c) Spedi srl.
- * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
- */
+// @Author: SPEDI srl
+// @Date:   19-01-2018
+// @Email:  sviluppo@spedi.it
+// @Last modified by:   SPEDI srl
+// @Last modified time: 19-01-2018
+// @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+// @Copyright: Copyright (C) SPEDI srl
 
 .swiper-container.hero-fade-carousel {
   width: 100%;
@@ -35,6 +35,9 @@
       padding-bottom: 20px;
       color: #fff;
       text-align: left;
+      h1, p{
+        color: #fff;
+      }
     }
   }
 

@@ -1,17 +1,17 @@
 <?php
-/**
- * @version    2.0.x
- * @package    SPEDI Image Splider
- * @author     SPEDI srl http://www.spedi.it
- * @copyright  Copyright (c) Spedi srl.
- * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
- */
+# @Author: SPEDI srl
+# @Date:   19-01-2018
+# @Email:  sviluppo@spedi.it
+# @Last modified by:   SPEDI srl
+# @Last modified time: 19-01-2018
+# @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+# @Copyright: Copyright (C) SPEDI srl
 
 // no direct access
 defined('_JEXEC') or die ('Restricted access');
 ?>
-<?php $heroCarouselId = 'hero-carousel-'.$module->id; ?>
-<div id="<?php echo $heroCarouselId ?>" class="hero-carousel carousel slide" data-ride="carousel" style="height: <?php echo $image_height ?>px">
+<?php $id = 'hero-carousel-'.$module->id; ?>
+<div id="<?php echo $id ?>" class="hero-carousel carousel slide" data-ride="carousel" style="height: <?php echo $image_height ?>">
   <div class="carousel-inner" role="listbox">
     <?php $c = 0; ?>
     <?php foreach ($slides as $slide) : ?>
@@ -35,7 +35,7 @@ defined('_JEXEC') or die ('Restricted access');
   <ol class="carousel-indicators">
   <?php for ($k = 0; $k < $c; $k++) : ?>
     <?php $active = ($k == 0) ? 'active' : ''; ?>
-    <li data-target="#<?php echo $heroCarouselId ?>" data-slide-to="<?php echo $k ?>" class="<?php echo $active ?>">
+    <li data-target="#<?php echo $id ?>" data-slide-to="<?php echo $k ?>" class="<?php echo $active ?>">
       0<?php echo $k+1 ?>
     </li>
   <?php endfor; ?>
@@ -43,12 +43,12 @@ defined('_JEXEC') or die ('Restricted access');
   <?php endif; ?>
 
   <?php if($show_arrows) : ?>
-  <a class="carousel-control-prev" href="#<?php echo $heroCarouselId ?>" role="button" data-slide="prev">
-    <span class="fa fa-angle-left fa-5x" aria-hidden="true"></span>
+  <a class="carousel-control-prev" href="#<?php echo $id ?>" role="button" data-slide="prev">
+    <span class="fal fa-chevron-left fa-5x" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#<?php echo $heroCarouselId ?>" role="button" data-slide="next">
-    <span class="fa fa-angle-right fa-5x" aria-hidden="true"></span>
+  <a class="carousel-control-next" href="#<?php echo $id ?>" role="button" data-slide="next">
+    <span class="fal fa-chevron-right fa-5x" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
   <?php endif; ?>

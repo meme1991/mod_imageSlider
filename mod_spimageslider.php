@@ -1,15 +1,15 @@
 <?php
-/**
- * @version    2.0.x
- * @package    SPEDI Image Splider
- * @author     SPEDI srl http://www.spedi.it
- * @copyright  Copyright (c) Spedi srl.
- * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
- */
+# @Author: SPEDI srl
+# @Date:   19-01-2018
+# @Email:  sviluppo@spedi.it
+# @Last modified by:   SPEDI srl
+# @Last modified time: 19-01-2018
+# @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+# @Copyright: Copyright (C) SPEDI srl
 
 // no direct access
 defined('_JEXEC') or die('Restricted access');
-defined('DS') or define('DS', DIRECTORY_SEPARATOR);
+// defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 
 JLoader::register('modSPImageSliderHelper', __DIR__ . '/helper.php');
 
@@ -50,24 +50,36 @@ $image_height 	 = $params->get('image_height');
 $show_arrows     = $params->get('show_arrows');
 $show_custom_nav = $params->get('show_custom_nav');
 
+JHtml::_('jquery.framework');
+
 switch ($params->get('layout')) {
 	case '_:grid':
 		$document->addStyleSheet(JURI::base(true).'/modules/'.$module->module.'/css/'.substr($params->get('layout', 'default'), 2, strlen($params->get('layout', 'default'))).'/default.min.css?v=1.0.0');
 		break;
 	case '_:grid-vertical':
 		$document->addStyleSheet(JURI::base(true).'/modules/'.$module->module.'/css/'.substr($params->get('layout', 'default'), 2, strlen($params->get('layout', 'default'))).'/default.min.css?v=1.0.0');
-		$document->addStyleSheet(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.css');
-		JHtml::_('jquery.framework');
-		$document->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js');
+		$extensionPath = '/templates/'.$tmpl.'/dist/swiper/';
+    if(file_exists(JPATH_SITE.$extensionPath)){
+    	$document->addStyleSheet(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.css');
+      $document->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js');
+    } else{
+      $document->addStyleSheet(JUri::base(true).'/modules/'.$module->module.'/dist/swiper/swiper.min.css');
+    	$document->addScript(JUri::base(true).'/modules/'.$module->module.'/dist/swiper/swiper.min.js');
+    }
 		break;
 	case '_:bootstrap-carousel':
 		$document->addStyleSheet(JURI::base(true).'/modules/'.$module->module.'/css/'.substr($params->get('layout', 'default'), 2, strlen($params->get('layout', 'default'))).'/default.min.css?v=1.0.0');
 		break;
 	case '_:swiper-fade-effect':
 		$document->addStyleSheet(JURI::base(true).'/modules/'.$module->module.'/css/'.substr($params->get('layout', 'default'), 2, strlen($params->get('layout', 'default'))).'/default.min.css?v=1.0.0');
-		$document->addStyleSheet(JUri::base(true).'/disttemplates/'.$tmpl.'/dist/swiper/swiper.min.css');
-		JHtml::_('jquery.framework');
-		$document->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js');
+		$extensionPath = '/templates/'.$tmpl.'/dist/swiper/';
+    if(file_exists(JPATH_SITE.$extensionPath)){
+    	$document->addStyleSheet(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.css');
+      $document->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js');
+    } else{
+      $document->addStyleSheet(JUri::base(true).'/modules/'.$module->module.'/dist/swiper/swiper.min.css');
+    	$document->addScript(JUri::base(true).'/modules/'.$module->module.'/dist/swiper/swiper.min.js');
+    }
 		break;
 }
 

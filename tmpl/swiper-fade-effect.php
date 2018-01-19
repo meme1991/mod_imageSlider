@@ -1,19 +1,19 @@
 <?php
-/**
- * @version    2.0.x
- * @package    SPEDI Image Splider
- * @author     SPEDI srl http://www.spedi.it
- * @copyright  Copyright (c) Spedi srl.
- * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
- */
+# @Author: SPEDI srl
+# @Date:   19-01-2018
+# @Email:  sviluppo@spedi.it
+# @Last modified by:   SPEDI srl
+# @Last modified time: 19-01-2018
+# @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+# @Copyright: Copyright (C) SPEDI srl
 
 // no direct access
 defined('_JEXEC') or die ('Restricted access');
-$heroCarouselId = 'hero-fade-carousel-'.$module->id;
+$id = 'hero-fade-carousel-'.$module->id;
 ?>
 <!-- Swiper -->
 <?php if($slides): ?>
-<div class="swiper-container hero-fade-carousel" id="<?php echo $heroCarouselId ?>" style="height: <?php echo $image_height ?>px">
+<div class="swiper-container hero-fade-carousel" id="<?php echo $id ?>" style="height: <?php echo $image_height ?>">
   <div class="swiper-wrapper">
     <?php foreach ($slides as $slide) : ?>
     <div class="swiper-slide" style="background-image:url(<?php echo $slide->image ?>)">
@@ -35,7 +35,7 @@ $heroCarouselId = 'hero-fade-carousel-'.$module->id;
 $document->addScriptDeclaration("
 	jQuery(document).ready(function($){
 
-    var swiper = new Swiper('#".$heroCarouselId."', {
+    var swiper = new Swiper('#".$id."', {
       spaceBetween: 30,
       effect: 'fade',
       pagination: {
@@ -55,7 +55,7 @@ $document->addScriptDeclaration("
 
 
     swiper.on('slideChange', function () {
-      $('#".$heroCarouselId." .swiper-slide').each(function () {
+      $('#".$id." .swiper-slide').each(function () {
           if ($(this).index() === swiper.activeIndex) {
               $(this).find('.caption-slider > h1').fadeIn(300).addClass('slideInLeft');
           }

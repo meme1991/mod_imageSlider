@@ -54,7 +54,7 @@
 					<option value="1">JYES</option>
 				</field>-->
 				<!--<field name="image_width" type="text" default="240" size="10" label="MOD_SPIMAGESLIDER_SLIDE_WIDTH" description="MOD_SPIMAGESLIDER_SLIDE_WIDTH_DESC" />-->
-				<field name="image_height" type="text" default="350" size="10" label="MOD_SPIMAGESLIDER_SLIDE_HEIGHT" description="MOD_SPIMAGESLIDER_SLIDE_HEIGHT_DESC" />
+				<field name="image_height" type="text" default="400px" size="10" label="MOD_SPIMAGESLIDER_SLIDE_HEIGHT" description="MOD_SPIMAGESLIDER_SLIDE_HEIGHT_DESC" />
 				<!--<field name="visible_images" type="text" default="3" size="10" label="MOD_SPIMAGESLIDER_VISIBLE_IMAGES" description="MOD_SPIMAGESLIDER_VISIBLE_IMAGES_DESC" />
 				<field name="space_between_images" type="text" default="10" size="10" label="MOD_SPIMAGESLIDER_SPACE_BETWEEN_IMAGES" description="MOD_SPIMAGESLIDER_SPACE_BETWEEN_IMAGES_DESC" />-->
 				<!-- <field name="sort_by" type="list" default="1" label="MOD_SPIMAGESLIDER_SORT_BY" description="MOD_SPIMAGESLIDER_SORT_BY_DESC">

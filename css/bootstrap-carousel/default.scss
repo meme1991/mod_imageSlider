@@ -1,10 +1,10 @@
-/**
- * @version    2.0.x
- * @package    SPEDI Image Splider
- * @author     SPEDI srl http://www.spedi.it
- * @copyright  Copyright (c) Spedi srl.
- * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
- */
+// @Author: SPEDI srl
+// @Date:   19-01-2018
+// @Email:  sviluppo@spedi.it
+// @Last modified by:   SPEDI srl
+// @Last modified time: 19-01-2018
+// @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+// @Copyright: Copyright (C) SPEDI srl
 
 .hero-carousel{
   //height: 500px;
@@ -38,6 +38,9 @@
     .carousel-caption{
       text-align: left;
       bottom: 50px;
+      h1, p{
+        color: #fff;
+      }
     }
   }
 
@@ -62,6 +65,7 @@
       color: #fff;
       height: auto;
       background-color: transparent;
+      cursor: pointer;
       &.active{
         font-weight: bold;
         font-size: 22px;

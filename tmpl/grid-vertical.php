@@ -1,18 +1,18 @@
 <?php
-/**
- * @version    2.0.x
- * @package    SPEDI Image Splider
- * @author     SPEDI srl http://www.spedi.it
- * @copyright  Copyright (c) Spedi srl.
- * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
- */
+# @Author: SPEDI srl
+# @Date:   19-01-2018
+# @Email:  sviluppo@spedi.it
+# @Last modified by:   SPEDI srl
+# @Last modified time: 19-01-2018
+# @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+# @Copyright: Copyright (C) SPEDI srl
 
 defined('_JEXEC') or die ('Restricted access');
-// $heroCarouselId = 'hero-fade-carousel-'.$module->id;
+$id = 'gid-'.$module->id;
 ?>
 
 <!-- Swiper -->
-<div class="hero-grid-vertical">
+<div class="hero-grid-vertical <?= $id ?>">
   <div class="container">
     <div class="swiper-container">
       <div class="swiper-wrapper">
@@ -43,7 +43,7 @@ defined('_JEXEC') or die ('Restricted access');
 $document->addScriptDeclaration("
 	jQuery(document).ready(function($){
 
-    var swiper = new Swiper('.hero-grid-vertical .swiper-container', {
+    var swiper = new Swiper('.hero-grid-vertical.".$id." .swiper-container', {
       slidesPerView: 3,
       spaceBetween: 0,
       autoplay: {
