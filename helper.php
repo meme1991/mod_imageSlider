@@ -3,7 +3,7 @@
 # @Date:   19-01-2018
 # @Email:  sviluppo@spedi.it
 # @Last modified by:   SPEDI srl
-# @Last modified time: 19-01-2018
+# @Last modified time: 22-01-2018
 # @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
 # @Copyright: Copyright (C) SPEDI srl
 
@@ -21,7 +21,7 @@ class modSPImageSliderHelper
         {
             if (preg_match('/.+\.(jpg|jpeg|gif|png)$/i', $file)) {
             	// check with getimagesize() which attempts to return the image mime-type
-            	$path = JPath::clean(JPATH_ROOT.DS.$folder.DS.$file);
+            	$path = JPath::clean(JPATH_ROOT.DIRECTORY_SEPARATOR.$folder.DIRECTORY_SEPARATOR.$file);
             	if(getimagesize($path)!==FALSE) $files[filemtime($path).$file] = $file;
 			}
         }
@@ -145,8 +145,8 @@ class modSPImageSliderHelper
 			case 'article':
 				if ($artid = $slide->params->get('id',$slide->params->get('link_article',0))) {
 					jimport('joomla.application.component.model');
-					require_once(JPATH_BASE.DS.'components'.DS.'com_content'.DS.'helpers'.DS.'route.php');
-					JModelLegacy::addIncludePath(JPATH_BASE.DS.'components'.DS.'com_content'.DS.'models');
+					require_once(JPATH_BASE.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'com_content'.DIRECTORY_SEPARATOR.'helpers'.DIRECTORY_SEPARATOR.'route.php');
+					JModelLegacy::addIncludePath(JPATH_BASE.DIRECTORY_SEPARATOR.'components'.DIRECTORY_SEPARATOR.'com_content'.DIRECTORY_SEPARATOR.'models');
 					$model = JModelLegacy::getInstance('Articles', 'ContentModel', array('ignore_request'=>true));
 					$model->setState('params', $app->getParams());
 					$model->setState('filter.article_id', $artid);
@@ -350,14 +350,14 @@ class modSPImageSliderHelper
 	// 	$theme = $params->get('theme', 'default');
   //
 	// 	if($params->get('slider_type')==1) {
-	// 		if(empty($prev) || !file_exists(JPATH_ROOT.DS.$prev)) $prev = 'modules/mod_djimageslider/themes/'.$theme.'/images/up.png';
-	// 		if(empty($next) || !file_exists(JPATH_ROOT.DS.$next)) $next = 'modules/mod_djimageslider/themes/'.$theme.'/images/down.png';
+	// 		if(empty($prev) || !file_exists(JPATH_ROOT.DIRECTORY_SEPARATOR.$prev)) $prev = 'modules/mod_djimageslider/themes/'.$theme.'/images/up.png';
+	// 		if(empty($next) || !file_exists(JPATH_ROOT.DIRECTORY_SEPARATOR.$next)) $next = 'modules/mod_djimageslider/themes/'.$theme.'/images/down.png';
 	// 	} else {
-	// 		if(empty($prev) || !file_exists(JPATH_ROOT.DS.$prev)) $prev = 'modules/mod_djimageslider/themes/'.$theme.'/images/prev.png';
-	// 		if(empty($next) || !file_exists(JPATH_ROOT.DS.$next)) $next = 'modules/mod_djimageslider/themes/'.$theme.'/images/next.png';
+	// 		if(empty($prev) || !file_exists(JPATH_ROOT.DIRECTORY_SEPARATOR.$prev)) $prev = 'modules/mod_djimageslider/themes/'.$theme.'/images/prev.png';
+	// 		if(empty($next) || !file_exists(JPATH_ROOT.DIRECTORY_SEPARATOR.$next)) $next = 'modules/mod_djimageslider/themes/'.$theme.'/images/next.png';
 	// 	}
-	// 	if(empty($play) || !file_exists(JPATH_ROOT.DS.$play)) $play = 'modules/mod_djimageslider/themes/'.$theme.'/images/play.png';
-	// 	if(empty($pause) || !file_exists(JPATH_ROOT.DS.$pause)) $pause = 'modules/mod_djimageslider/themes/'.$theme.'/images/pause.png';
+	// 	if(empty($play) || !file_exists(JPATH_ROOT.DIRECTORY_SEPARATOR.$play)) $play = 'modules/mod_djimageslider/themes/'.$theme.'/images/play.png';
+	// 	if(empty($pause) || !file_exists(JPATH_ROOT.DIRECTORY_SEPARATOR.$pause)) $pause = 'modules/mod_djimageslider/themes/'.$theme.'/images/pause.png';
   //
 	// 	$navi = (object) array('prev'=>$prev,'next'=>$next,'play'=>$play,'pause'=>$pause);
   //
