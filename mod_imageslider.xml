@@ -7,7 +7,7 @@
 	<license>GNU/GPL license: http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>sviluppo@spedi.it</authorEmail>
 	<authorUrl>http://www.spedi.it</authorUrl>
-	<version>2.0.0</version>
+	<version>1.0.0</version>
 	<description>MOD_IMAGESLIDER_DESC</description>
 	<files>
 		<filename module="mod_imageslider">mod_imageslider.php</filename>
