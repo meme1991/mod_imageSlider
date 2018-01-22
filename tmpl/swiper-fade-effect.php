@@ -3,7 +3,7 @@
 # @Date:   19-01-2018
 # @Email:  sviluppo@spedi.it
 # @Last modified by:   SPEDI srl
-# @Last modified time: 22-01-2018
+# @Last modified time: 2018-01-22T18:11:45+01:00
 # @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
 # @Copyright: Copyright (C) SPEDI srl
 
@@ -20,6 +20,11 @@ $id = 'hero-fade-carousel-'.$module->id;
       <div class="caption-slider">
         <h1 class="animated slideInLeft"><?php echo $slide->title ?></h1>
         <?php echo $slide->description ?>
+        <?php if(!is_null($slide->params->get('link_type'))) : ?>
+        <p class="mt-3">
+          <a href="<?php echo $slide->link ?>" target="<?php echo $slide->params->get('link_target') ?>" class="btn btn-outline-light">Scopri di più <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        </p>
+        <?php endif; ?>
       </div>
     </div>
     <?php endforeach; ?>

@@ -3,7 +3,7 @@
 # @Date:   19-01-2018
 # @Email:  sviluppo@spedi.it
 # @Last modified by:   SPEDI srl
-# @Last modified time: 19-01-2018
+# @Last modified time: 2018-01-22T18:09:05+01:00
 # @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
 # @Copyright: Copyright (C) SPEDI srl
 
@@ -23,7 +23,7 @@ defined('_JEXEC') or die ('Restricted access');
           <?php echo $slide->description ?>
           <?php if(!is_null($slide->params->get('link_type'))) : ?>
           <p class="mt-3">
-            <a href="<?php echo $slide->link ?>" target="<?php echo $slide->params->get('link_target') ?>" class="btn btn-primary">Vai all'evento <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="<?php echo $slide->link ?>" target="<?php echo $slide->params->get('link_target') ?>" class="btn btn-light">Vai all'evento <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
           </p>
           <?php endif; ?>
         </div>
