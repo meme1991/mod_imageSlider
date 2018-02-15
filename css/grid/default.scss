@@ -2,95 +2,78 @@
 // @Date:   19-01-2018
 // @Email:  sviluppo@spedi.it
 // @Last modified by:   SPEDI srl
-// @Last modified time: 19-01-2018
-// @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+// @Last modified; time: 15-02-2018
+// @License: GNU/GPL; license: http://www.gnu.org/copyleft/gpl.html
 // @Copyright: Copyright (C) SPEDI srl
 
-$maxHeight: 400px;
-$minHeight: 200px;
+// $maxHeight: ;
+// $minHeight: 200px;
 
 .hero-grid{
-  .cover{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+  height: 400px;
+
+  .hero-grid-item{
     position: relative;
-    background-size: cover;
-    background-position: center center;
-    width: 100%;
-    height: 100%;
-    transform: scale(1);
-    transition: all 1s ease-in-out;
-    &::after{
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 50%;
-      bottom: 0;
-      left: 0;
-      //background-color: rgba(58,53,184,.66);
-      background: linear-gradient(to top, rgba(0,0,0,.66), rgba(0,0,0,.30), rgba(0,0,0,0));
-      // background: linear-gradient(to top, rgba(58,53,184,.66), rgba(58,53,184,.30), rgba(58,53,184,0));
-    }
-    // &:hover{
-    //   transform: scale(1.1);
-    //   transition: all 1s ease-in-out;
-    // }
-  }
-
-  .caption{
-    position: absolute;
-    width: 90%;
-    bottom: 20px;
-    left: 20px;
-    h3,p{
-      color: #eee;
-    }
-  }
-
-  a.link{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero-grid-left{
-    position: relative;
-    height: $maxHeight;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: rgb(180, 115, 242);
+    color: #fff;
     overflow: hidden;
-    padding: 0;
-  }
-  .hero-grid-right{
-    .hero-grid-right-smallbox{
+
+    &.big{
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    &.wide{
+      grid-column: span 2;
+    }
+    &.small{}
+
+    .cover{
       position: relative;
-      height: $minHeight;
-      overflow: hidden;
-      padding: 0;
-      .caption{
+      background-size: cover;
+      background-position: center center;
+      width: 100%;
+      height: 100%;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out;
+      &::after{
+        content: '';
         position: absolute;
-        width: 90%;
-        bottom: 10px;
-        left: 10px;
-        h3,p{
-          color: #eee;
-        }
-        h3{
-          font-size: 18px;
-        }
-        p{
-          font-size: 12px;
-        }
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        //background-color: rgba(58,53,184,.66);
+        background: -webkit-gradient(linear, left bottom, right top, from(rgba(0,0,0,.66)), color-stop(rgba(0,0,0,.30)), to(rgba(0,0,0,0)));
+        background: linear-gradient(to top right, rgba(0,0,0,.66), rgba(0,0,0,.30), rgba(0,0,0,0));
+        // background: linear-gradient(to top, rgba(58,53,184,.66), rgba(58,53,184,.30), rgba(58,53,184,0));
       }
     }
-  }
 
-  .hero-grid-left, .hero-grid-right-smallbox{
-    &:hover{
-      .cover{
-        transform: scale(1.1);
-        transition: all 1s ease-in-out;
+    .caption{
+      position: absolute;
+      width: 90%;
+      bottom: 20px;
+      left: 20px;
+      h3,p{
+        color: #eee;
       }
     }
+
+    a.link{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
-
-
 }
